@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/reactApp/gameconnect/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/reactApp/gameconnect/static/js/main.422e4bf7.chunk.js",
+    "main.js.map": "/reactApp/gameconnect/static/js/main.422e4bf7.chunk.js.map",
+    "runtime-main.js": "/reactApp/gameconnect/static/js/runtime-main.285364d3.js",
+    "runtime-main.js.map": "/reactApp/gameconnect/static/js/runtime-main.285364d3.js.map",
+    "static/js/2.dd662542.chunk.js": "/reactApp/gameconnect/static/js/2.dd662542.chunk.js",
+    "static/js/2.dd662542.chunk.js.map": "/reactApp/gameconnect/static/js/2.dd662542.chunk.js.map",
+    "static/js/3.62b4dd67.chunk.js": "/reactApp/gameconnect/static/js/3.62b4dd67.chunk.js",
+    "static/js/3.62b4dd67.chunk.js.map": "/reactApp/gameconnect/static/js/3.62b4dd67.chunk.js.map",
+    "index.html": "/reactApp/gameconnect/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/reactApp/gameconnect/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.dd662542.chunk.js.LICENSE.txt": "/reactApp/gameconnect/static/js/2.dd662542.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/reactApp/gameconnect/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.285364d3.js",
+    "static/js/2.dd662542.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.422e4bf7.chunk.js"
+  ]
+}

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import {Navbar,NavbarBrand,NavbarToggler,Collapse,Nav,NavItem,NavLink,Button,
     NavbarText,Offcanvas,OffcanvasHeader,OffcanvasBody,Carousel,
-    CarouselIndicators,CarouselItem,CarouselCaption,CarouselControl,UncontrolledCarousel} from 'reactstrap';
+    CarouselIndicators,CarouselItem,CarouselCaption,CarouselControl,UncontrolledCarousel,
+    Card,CardBody,CardTitle,CardText,CardImg} from 'reactstrap';
+import img from './images/SkyExterminatorWindow.jpg';
 
 class Header extends Component {
     constructor(props){
@@ -27,6 +29,42 @@ class Header extends Component {
     }
 
     render(){
+        const dataObjects = this.props.dataObjects;
+        const renderOffCanvas = (renderObject) => {
+            return(
+                <div key={renderObject.id}>
+                    <img width="100%" src={img} alt="Game Screenshot"/>
+                    <hr className="visible"></hr>
+                </div>
+                // <Card >
+                //     <CardBody>
+                //     {/* <CardImg
+                //     alt="Game Screenshot"
+                //     top
+                //     src={img}
+                //     width="100%"
+                //     /> */}
+                //     <img width="100%" src={img} alt="Game Screenshot"/>
+                //     <CardTitle tag="h6">
+                //         {renderObject.name}
+                //     </CardTitle>
+                //     <CardText>
+                //         <small className="text-muted">
+                //         {renderObject.genreName}
+                //         </small>
+                //     </CardText>
+                //     </CardBody>
+                // </Card>
+            );
+        }
+        const offCanvasContents = dataObjects.map(renderObject => {
+            return(
+                <div key={renderObject.id} className="row col-12">
+                    {renderOffCanvas(renderObject)}
+                </div>
+            );
+        });
+
         return(
             <div>
                 <Navbar
@@ -37,7 +75,7 @@ class Header extends Component {
                     fixed="top"
                 >
                     <NavbarBrand href="/">
-                    reactstrap
+                    <i class="fa fa-gamepad" aria-hidden="true"></i> GameConnect
                     </NavbarBrand>
                     <NavbarToggler onClick={this.toggleNav} />
                     <Collapse isOpen={this.state.isNavOpen} navbar>
@@ -64,17 +102,21 @@ class Header extends Component {
                     </Collapse>
                 </Navbar>
                 <Offcanvas
+                    className="offCanvasStyle"
                     scrollable
                     isOpen={this.state.isOffCanvasOpen}
                     toggle={this.toggleOffCanvas}
                     autoFocus={true}>
                     <OffcanvasHeader toggle={this.toggleOffCanvas}>
-                    Offcanvas
+                    Game List
                     </OffcanvasHeader>
                     <OffcanvasBody>
-                    <strong>
-                        This is the Offcanvas body.
-                    </strong>
+                        <div className="container">
+                        {offCanvasContents}
+                        <strong>
+                        End.
+                        </strong>
+                        </div>
                     </OffcanvasBody>
                 </Offcanvas>
                 <UncontrolledCarousel

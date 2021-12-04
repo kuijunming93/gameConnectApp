@@ -7,41 +7,34 @@ class Body extends Component{
         super(props);
         this.state = {
             isDescriptionShown: false
-            // memoryLoadedCount: 6
         };
         this.imageClicked = this.imageClicked.bind(this);
-        this.createStateDescriptionShown = this.createStateDescriptionShown.bind(this);
-        // this.updateMemoryLoadedCount = this.updateMemoryLoadedCount.bind(this);
+        this.createDescriptionState = this.createDescriptionState.bind(this);
+        this.createInitialBodyContents = this.createInitialBodyContents.bind(this);
     }
 
     imageClicked(clickedId){
-        console.log("Clicked");
+        console.log("Clicked onto item index " + clickedId);
+        console.log(clickedId);
         this.setState({
-            isDescriptionShown: !this.state.isDescriptionShown
+            ...this.state, [clickedId]: !this.state[clickedId]
+        });
+        console.log(this.state);
+    }
+
+    createDescriptionState(addIndex){
+        const index = addIndex.toString();
+        return this.setState({
+            ...this.state, [index]: false
         });
     }
 
-    createStateDescriptionShown(addId){
-        if (!this.state.contains(addId))
-            this.setState({
-                [addId]: false
-                // isDescriptionShown: this.state.isDescriptionShown.concat([false])
-            });
-        console.log("Created " + this.state.addId);
-    }
-
-    // updateMemoryLoadedCount(){
-    //     this.setState({
-    //         memoryLoadedCount: this.props.dataObjects.length
-    //     });
-    //     console.log("Updated memory with count of " + this.state.memoryLoadedCount);
-    // }
-
-    render() {
+    createInitialBodyContents(){
+        console.log("Ran createInitialBodyContents");
         const dataObjects = this.props.dataObjects;
         const renderCard = (renderObject) => {
-            // this.createStateDescriptionShown(renderObject.id);
             let imagePath = renderObject.image;
+            const objectIndex = renderObject.id.toString();
             return(
                 <Card>
                     <CardBody>
@@ -59,9 +52,9 @@ class Body extends Component{
                     bottom
                     src= {imagePath}
                     width="100%"
-                    onClick = {this.imageClicked}
+                    onClick = {() => this.imageClicked(objectIndex)}
                     />
-                    <Collapse isOpen={this.state.isDescriptionShown}>
+                    <Collapse isOpen={this.state.objectIndex}>
                     <Card body>
                         <CardTitle tag="h6">Compatibility</CardTitle>
                         <CardSubtitle>
@@ -73,7 +66,6 @@ class Body extends Component{
                     </Card>
                     </Collapse>
                 </Card>
-                
             );
         }
 
@@ -89,10 +81,28 @@ class Body extends Component{
             <div className="container">
                 <div className="row">
                     {BodyContents}
-                    {/* {this.updateMemoryLoadedCount()} */}
                 </div>
             </div>
         );
+    }
+
+    static getDerivedStateFromProps(props,state){
+        console.log("comefirst");
+    }
+
+    componentDidMount(){
+        console.log("Mounted");
+        const dataObjects = this.props.dataObjects;
+        const createInitialState = dataObjects.map(eachObject => {
+            return this.createDescriptionState(eachObject.id);;
+        });
+        this.createInitialBodyContents();
+        return ({createInitialState});
+    }
+
+    render() {
+        console.log("Rendered");
+        return this.createInitialBodyContents();
     }
 }
 

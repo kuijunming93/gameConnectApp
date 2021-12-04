@@ -1,27 +1,47 @@
 import React, {Component} from "react";
 import {Collapse,Card,CardBody,CardTitle,
     CardSubtitle,CardText,CardImg,Button, CardFooter} from 'reactstrap';
-import img from './images/SkyExterminatorWindow.jpg';
 
 class Body extends Component{
     constructor(props){
         super(props);
         this.state = {
             isDescriptionShown: false
+            // memoryLoadedCount: 6
         };
         this.imageClicked = this.imageClicked.bind(this);
+        this.createStateDescriptionShown = this.createStateDescriptionShown.bind(this);
+        // this.updateMemoryLoadedCount = this.updateMemoryLoadedCount.bind(this);
     }
 
-    imageClicked(){
+    imageClicked(clickedId){
         console.log("Clicked");
         this.setState({
             isDescriptionShown: !this.state.isDescriptionShown
         });
     }
 
+    createStateDescriptionShown(addId){
+        if (!this.state.contains(addId))
+            this.setState({
+                [addId]: false
+                // isDescriptionShown: this.state.isDescriptionShown.concat([false])
+            });
+        console.log("Created " + this.state.addId);
+    }
+
+    // updateMemoryLoadedCount(){
+    //     this.setState({
+    //         memoryLoadedCount: this.props.dataObjects.length
+    //     });
+    //     console.log("Updated memory with count of " + this.state.memoryLoadedCount);
+    // }
+
     render() {
         const dataObjects = this.props.dataObjects;
         const renderCard = (renderObject) => {
+            // this.createStateDescriptionShown(renderObject.id);
+            let imagePath = renderObject.image;
             return(
                 <Card>
                     <CardBody>
@@ -37,7 +57,7 @@ class Body extends Component{
                     <CardImg
                     alt="Game Screenshot"
                     bottom
-                    src={img}
+                    src= {imagePath}
                     width="100%"
                     onClick = {this.imageClicked}
                     />
@@ -69,6 +89,7 @@ class Body extends Component{
             <div className="container">
                 <div className="row">
                     {BodyContents}
+                    {/* {this.updateMemoryLoadedCount()} */}
                 </div>
             </div>
         );

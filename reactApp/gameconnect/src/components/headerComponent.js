@@ -3,7 +3,7 @@ import {Navbar,NavbarBrand,NavbarToggler,Collapse,Nav,NavItem,NavLink,Button,
     NavbarText,Offcanvas,OffcanvasHeader,OffcanvasBody,Carousel,
     CarouselIndicators,CarouselItem,CarouselCaption,CarouselControl,UncontrolledCarousel,
     Card,CardBody,CardTitle,CardText,CardImg} from 'reactstrap';
-import img from './images/SkyExterminatorWindow.jpg';
+    import { Link } from "react-router-dom";
 
 class Header extends Component {
     constructor(props){
@@ -31,35 +31,21 @@ class Header extends Component {
     render(){
         const dataObjects = this.props.dataObjects;
         const renderOffCanvas = (renderObject) => {
+            let imagePath = renderObject.image;
             return(
                 <div key={renderObject.id}>
-                    <img width="100%" src={img} alt="Game Screenshot"/>
+                    <a href={renderObject.pathURL}>
+                        <img width="100%" src={imagePath} alt="Game Screenshot"/>
+                    </a>
+                    <div className="mt-3"><h5>{renderObject.name}</h5></div>
+                    <div><small>{renderObject.genreName}</small></div>
                     <hr className="visible"></hr>
                 </div>
-                // <Card >
-                //     <CardBody>
-                //     {/* <CardImg
-                //     alt="Game Screenshot"
-                //     top
-                //     src={img}
-                //     width="100%"
-                //     /> */}
-                //     <img width="100%" src={img} alt="Game Screenshot"/>
-                //     <CardTitle tag="h6">
-                //         {renderObject.name}
-                //     </CardTitle>
-                //     <CardText>
-                //         <small className="text-muted">
-                //         {renderObject.genreName}
-                //         </small>
-                //     </CardText>
-                //     </CardBody>
-                // </Card>
             );
         }
         const offCanvasContents = dataObjects.map(renderObject => {
             return(
-                <div key={renderObject.id} className="row col-12">
+                <div key={renderObject.id} className="row">
                     {renderOffCanvas(renderObject)}
                 </div>
             );
@@ -90,31 +76,27 @@ class Header extends Component {
                                 <i class="fa fa-user-circle" aria-hidden="true"></i> Play Now
                             </Button>
                         </NavItem>
-                        <NavItem>
-                            <NavLink href="https://github.com/reactstrap/reactstrap">
-                                GitHub
-                            </NavLink>
-                        </NavItem>
                     </Nav>
                     <NavbarText>
-                        Simple Text
+                        <a href="https://kuijunming93.github.io/myWebpage/site2/"
+                        style={{textDecoration: "none", color: "lightblue"}}>
+                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> GoTo GrandFlix</a>
                     </NavbarText>
                     </Collapse>
                 </Navbar>
                 <Offcanvas
-                    className="offCanvasStyle"
                     scrollable
                     isOpen={this.state.isOffCanvasOpen}
                     toggle={this.toggleOffCanvas}
                     autoFocus={true}>
                     <OffcanvasHeader toggle={this.toggleOffCanvas}>
-                    Game List
+                    <i class="fa fa-gamepad" aria-hidden="true"></i> Game List
                     </OffcanvasHeader>
                     <OffcanvasBody>
                         <div className="container">
                         {offCanvasContents}
                         <strong>
-                        End.
+                        Stay tuned for more to come..
                         </strong>
                         </div>
                     </OffcanvasBody>

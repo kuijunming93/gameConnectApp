@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.offcanvas{
+  color: white;
+  background-color: black;
+}
+.offcanvas-body{
+  text-align: center;
+  text-decoration: none;
+}
+.offcanvas-header{
+  background-color: #212529;
+  color: white;
+}

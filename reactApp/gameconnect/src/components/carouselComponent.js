@@ -16,9 +16,9 @@ const JBTCarousel = (props) => {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h4 style={{fontSize: "4vw"}}>{props.informationPanel[0].title}</h4>
+          <span style={{fontSize: "4vw"}}><strong>{props.informationPanel[0].title}</strong></span><span> &copy;</span>
           <h2 style={{fontSize: "3vw"}}>{props.informationPanel[0].subtitle}</h2>
-          <p style={{fontSize: "1.5vw"}}>{props.informationPanel[0].description}</p>
+          <p style={{fontSize: "1.7vw"}}>{props.informationPanel[0].description}</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -30,7 +30,7 @@ const JBTCarousel = (props) => {
         <Carousel.Caption>
           <h4 style={{fontSize: "4vw"}}>{props.informationPanel[1].title}</h4>
           <h2 style={{fontSize: "3vw"}}>{props.informationPanel[1].subtitle}</h2>
-          <p style={{fontSize: "1.5vw"}}>{props.informationPanel[1].description}</p>
+          <p style={{fontSize: "1.7vw"}}>{props.informationPanel[1].description}</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

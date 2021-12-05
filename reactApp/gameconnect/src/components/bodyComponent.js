@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Collapse,Card,CardBody,CardTitle,
-    CardSubtitle,CardText,CardImg,Button, CardFooter} from 'reactstrap';
+    CardSubtitle,CardText,CardImg,Button} from 'reactstrap';
 
 class Body extends Component{
     constructor(props){
@@ -11,22 +11,30 @@ class Body extends Component{
         this.imageClicked = this.imageClicked.bind(this);
         this.createDescriptionState = this.createDescriptionState.bind(this);
         this.createInitialBodyContents = this.createInitialBodyContents.bind(this);
+        this.checkState = this.checkState.bind(this);
     }
 
     imageClicked(clickedId){
+        let newClickedId = "m" + clickedId.toString();
         console.log("Clicked onto item index " + clickedId);
         console.log(clickedId);
         this.setState({
-            ...this.state, [clickedId]: !this.state[clickedId]
+            ...this.state, [newClickedId]: !this.state[newClickedId]
         });
         console.log(this.state);
     }
 
     createDescriptionState(addIndex){
-        const index = addIndex.toString();
+        const index = "m" + addIndex.toString();
         return this.setState({
             ...this.state, [index]: false
         });
+    }
+
+    checkState(checkId){
+        const newId = "m" + checkId.toString();
+        console.log("Checking ID " + checkId + " - " + this.state[newId]);
+        return this.state[newId];
     }
 
     createInitialBodyContents(){
@@ -34,7 +42,6 @@ class Body extends Component{
         const dataObjects = this.props.dataObjects;
         const renderCard = (renderObject) => {
             let imagePath = renderObject.image;
-            const objectIndex = renderObject.id.toString();
             return(
                 <Card>
                     <CardBody>
@@ -52,9 +59,9 @@ class Body extends Component{
                     bottom
                     src= {imagePath}
                     width="100%"
-                    onClick = {() => this.imageClicked(objectIndex)}
+                    onClick = {() => this.imageClicked(renderObject.id)}
                     />
-                    <Collapse isOpen={this.state.objectIndex}>
+                    <Collapse isOpen={this.checkState(renderObject.id)}>
                     <Card body>
                         <CardTitle tag="h6">Compatibility</CardTitle>
                         <CardSubtitle>
@@ -71,7 +78,7 @@ class Body extends Component{
 
         const BodyContents = dataObjects.map(renderObject => {
             return(
-                <div key={renderObject.id} className="col-12 col-md-6 mt-1">
+                <div key={renderObject.id} className="col-12 col-md-6 mt-3">
                     {renderCard(renderObject)}
                 </div>
             );

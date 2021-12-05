@@ -60,7 +60,7 @@ class Body extends Component{
                     />
                     <Collapse isOpen={this.checkState(renderObject.id)}>
                     <Card body>
-                        <CardTitle tag="h6">Compatibility</CardTitle>
+                        <CardTitle tag="h6"><strong>Compatibility</strong> <i className="fa fa-plug" aria-hidden="true"></i></CardTitle>
                         <CardSubtitle style={{fontSize:"90%"}}>
                             {renderObject.compatibility}
                             <div>{renderObject.noncompatible}</div>

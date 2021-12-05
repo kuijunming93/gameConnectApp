@@ -8,6 +8,7 @@ body {
   background-color: black;
   background: url('./assets/images/earthWallpaper3.jpg') repeat;
   background-position: center;
+  font-family: 'Oxygen', sans-serif;
 }
 
 code {

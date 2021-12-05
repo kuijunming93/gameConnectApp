@@ -49,3 +49,13 @@
   background-color: #212529;
   color: white;
 }
+
+.card{
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+@media (min-width: 440px) and (max-width: 767px){
+  .JBTCarousel{
+      font-size: 1vw;
+  }
+}

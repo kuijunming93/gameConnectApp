@@ -54,14 +54,12 @@ class Header extends Component {
                     color="dark"
                     container
                     dark
-                    expand="md"
+                    expand="sm"
                     fixed="top"
                 >
-                    <NavbarBrand href="/">
+                    <NavbarBrand className = "ms-auto" href="">
                     <i className="fa fa-gamepad" aria-hidden="true"></i> GameConnect
                     </NavbarBrand>
-                    <NavbarToggler onClick={this.toggleNav} />
-                    <Collapse isOpen={this.state.isNavOpen} navbar>
                     <Nav
                         className="me-auto"
                         navbar
@@ -74,7 +72,9 @@ class Header extends Component {
                             </Button>
                         </NavItem>
                     </Nav>
-                    <NavbarText>
+                    <NavbarToggler onClick={this.toggleNav} />
+                    <Collapse isOpen={this.state.isNavOpen} navbar>
+                    <NavbarText className="ms-auto">
                         <a href="https://kuijunming93.github.io/myWebpage/site2/"
                         style={{textDecoration: "none", color: "lightblue"}}>
                             <i className="fa fa-arrow-circle-o-right" aria-hidden="true"></i> GoTo GrandFlix</a>

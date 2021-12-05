@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { Link } from "react-router-dom";
 import {Collapse,Card,CardBody,CardTitle,
     CardSubtitle,CardText,CardImg,Button} from 'reactstrap';
 
@@ -64,7 +65,8 @@ class Body extends Component{
                         </CardSubtitle>
                         <CardText className="text-muted">
                             {renderObject.descriptions}</CardText>
-                        <Button color="primary">Play</Button>
+                        <Button color="primary" href = {renderObject.pathURL}
+                        >Play</Button>
                     </Card>
                     </Collapse>
                 </Card>

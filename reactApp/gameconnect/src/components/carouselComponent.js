@@ -1,98 +1,44 @@
-import React, { Component } from 'react';
-import {Carousel,CarouselIndicators,CarouselItem,
-    CarouselCaption,CarouselControl,UncontrolledCarousel} from 'reactstrap';
+import React from 'react';
+import { Carousel } from 'react-bootstrap';
 
-class JBTCarousel extends Component{
-    constructor(props){
-        super(props);
-        this.state = {}
-    }
-
-    render(){
-        return(
-            <div>
-              {/* <Carousel
-                activeIndex={0}
-                next={function noRefCheck(){}}
-                previous={function noRefCheck(){}}
-              > */}
-                {/* <CarouselIndicators
-                  activeIndex={0}
-                  items={[
-                    {
-                      altText: 'Slide 1',
-                      caption: 'Slide 1',
-                      key: 1,
-                      src: 'https://picsum.photos/id/123/1200/600'
-                    },
-                    {
-                      altText: 'Slide 2',
-                      caption: 'Slide 2',
-                      key: 2,
-                      src: 'https://picsum.photos/id/456/1200/600'
-                    },
-                    {
-                      altText: 'Slide 3',
-                      caption: 'Slide 3',
-                      key: 3,
-                      src: 'https://picsum.photos/id/678/1200/600'
-                    }
-                  ]}
-                  onClickHandler={function noRefCheck(){}}
-                /> */}
-                {/* <CarouselItem
-                  onExited={function noRefCheck(){}}
-                  onExiting={function noRefCheck(){}}
-                >
-                  <img
-                    alt="Slide 1"
-                    src="https://picsum.photos/id/123/1200/600"
-                  />
-                  <CarouselCaption
-                    captionHeader="Slide 1"
-                    captionText="Slide 1"
-                  />
-                </CarouselItem>
-                <CarouselItem
-                  onExited={function noRefCheck(){}}
-                  onExiting={function noRefCheck(){}}
-                >
-                  <img
-                    alt="Slide 2"
-                    src="https://picsum.photos/id/456/1200/600"
-                  />
-                  <CarouselCaption
-                    captionHeader="Slide 2"
-                    captionText="Slide 2"
-                  />
-                </CarouselItem>
-                <CarouselItem
-                  onExited={function noRefCheck(){}}
-                  onExiting={function noRefCheck(){}}
-                >
-                  <img
-                    alt="Slide 3"
-                    src="https://picsum.photos/id/678/1200/600"
-                  />
-                  <CarouselCaption
-                    captionHeader="Slide 3"
-                    captionText="Slide 3"
-                  />
-                </CarouselItem> */}
-                {/* <CarouselControl
-                  direction="prev"
-                  directionText="Previous"
-                  onClickHandler={function noRefCheck(){}}
-                />
-                <CarouselControl
-                  direction="next"
-                  directionText="Next"
-                  onClickHandler={function noRefCheck(){}}
-                /> */}
-              {/* </Carousel> */}
-            </div>
-        );
-    }
+const JBTCarousel = (props) => {
+  return(
+    <Carousel fade
+    interval={2500}
+    keyboard={false}
+    indicators={false}
+    controls={true}
+    pause={false}>
+      <Carousel.Item interval={8000}>
+        <img
+          width="100%"
+          height="100%"
+          className="d-block w-100"
+          src={props.informationPanel[0].imageURL}
+          alt="First slide"
+        />
+        <Carousel.Caption>
+          <h4>{props.informationPanel[0].title}</h4>
+          <h2>{props.informationPanel[0].subtitle}</h2>
+          <p>{props.informationPanel[0].description}</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          width="100%"
+          height="100%"
+          className="d-block w-100"
+          src={props.informationPanel[1].imageURL}
+          alt="Second slide"
+        />
+        <Carousel.Caption>
+          <h4>{props.informationPanel[1].title}</h4>
+          <h2>{props.informationPanel[1].subtitle}</h2>
+          <p>{props.informationPanel[1].description}</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+  );
 }
 
 export default JBTCarousel;

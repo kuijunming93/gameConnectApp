@@ -16,12 +16,9 @@ class Body extends Component{
 
     imageClicked(clickedId){
         let newClickedId = "m" + clickedId.toString();
-        console.log("Clicked onto item index " + clickedId);
-        console.log(clickedId);
         this.setState({
             ...this.state, [newClickedId]: !this.state[newClickedId]
         });
-        console.log(this.state);
     }
 
     createDescriptionState(addIndex){
@@ -33,12 +30,10 @@ class Body extends Component{
 
     checkState(checkId){
         const newId = "m" + checkId.toString();
-        console.log("Checking ID " + checkId + " - " + this.state[newId]);
         return this.state[newId];
     }
 
     createInitialBodyContents(){
-        console.log("Ran createInitialBodyContents");
         const dataObjects = this.props.dataObjects;
         const renderCard = (renderObject) => {
             let imagePath = renderObject.image;
@@ -93,12 +88,7 @@ class Body extends Component{
         );
     }
 
-    static getDerivedStateFromProps(props,state){
-        console.log("comefirst");
-    }
-
     componentDidMount(){
-        console.log("Mounted");
         const dataObjects = this.props.dataObjects;
         const createInitialState = dataObjects.map(eachObject => {
             return this.createDescriptionState(eachObject.id);;
@@ -108,7 +98,6 @@ class Body extends Component{
     }
 
     render() {
-        console.log("Rendered");
         return this.createInitialBodyContents();
     }
 }

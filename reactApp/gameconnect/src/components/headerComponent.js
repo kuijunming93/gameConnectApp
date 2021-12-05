@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import {Navbar,NavbarBrand,NavbarToggler,Collapse,Nav,NavItem,NavLink,Button,
-    NavbarText,Offcanvas,OffcanvasHeader,OffcanvasBody,Carousel,
-    CarouselIndicators,CarouselItem,CarouselCaption,CarouselControl,UncontrolledCarousel,
-    Card,CardBody,CardTitle,CardText,CardImg} from 'reactstrap';
-    import { Link } from "react-router-dom";
+import {Navbar,NavbarBrand,NavbarToggler,Collapse,Nav,NavItem,Button,
+    NavbarText,Offcanvas,OffcanvasHeader,OffcanvasBody} from 'reactstrap';
 
 class Header extends Component {
     constructor(props){
@@ -101,27 +98,6 @@ class Header extends Component {
                         </div>
                     </OffcanvasBody>
                 </Offcanvas>
-                <UncontrolledCarousel
-                items={[
-                    {
-                    altText: '',
-                    caption: 'test',
-                    key: 1,
-                    src: 'https://picsum.photos/id/123/1200/600'
-                    },
-                    {
-                    altText: '',
-                    caption: '',
-                    key: 2,
-                    src: 'https://picsum.photos/id/456/1200/600'
-                    },
-                    {
-                    altText: '',
-                    caption: '',
-                    key: 3,
-                    src: 'https://picsum.photos/id/678/1200/600'
-                    }
-                ]}/>
             </div>
         );
     }

@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/gameConnectApp/static/css/main.c2887088.chunk.css",
-    "main.js": "/gameConnectApp/static/js/main.76bded59.chunk.js",
-    "main.js.map": "/gameConnectApp/static/js/main.76bded59.chunk.js.map",
+    "main.css": "/gameConnectApp/static/css/main.31d0df80.chunk.css",
+    "main.js": "/gameConnectApp/static/js/main.3b9db5bc.chunk.js",
+    "main.js.map": "/gameConnectApp/static/js/main.3b9db5bc.chunk.js.map",
     "runtime-main.js": "/gameConnectApp/static/js/runtime-main.cec34d26.js",
     "runtime-main.js.map": "/gameConnectApp/static/js/runtime-main.cec34d26.js.map",
     "static/css/2.bb17d45b.chunk.css": "/gameConnectApp/static/css/2.bb17d45b.chunk.css",
-    "static/js/2.59f525e3.chunk.js": "/gameConnectApp/static/js/2.59f525e3.chunk.js",
-    "static/js/2.59f525e3.chunk.js.map": "/gameConnectApp/static/js/2.59f525e3.chunk.js.map",
+    "static/js/2.92b9063a.chunk.js": "/gameConnectApp/static/js/2.92b9063a.chunk.js",
+    "static/js/2.92b9063a.chunk.js.map": "/gameConnectApp/static/js/2.92b9063a.chunk.js.map",
     "index.html": "/gameConnectApp/index.html",
     "static/css/2.bb17d45b.chunk.css.map": "/gameConnectApp/static/css/2.bb17d45b.chunk.css.map",
-    "static/css/main.c2887088.chunk.css.map": "/gameConnectApp/static/css/main.c2887088.chunk.css.map",
-    "static/js/2.59f525e3.chunk.js.LICENSE.txt": "/gameConnectApp/static/js/2.59f525e3.chunk.js.LICENSE.txt",
+    "static/css/main.31d0df80.chunk.css.map": "/gameConnectApp/static/css/main.31d0df80.chunk.css.map",
+    "static/js/2.92b9063a.chunk.js.LICENSE.txt": "/gameConnectApp/static/js/2.92b9063a.chunk.js.LICENSE.txt",
     "static/media/index.css": "/gameConnectApp/static/media/earthWallpaper3.74b27996.jpg",
     "static/media/font-awesome.css": "/gameConnectApp/static/media/fontawesome-webfont.f691f37e.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.cec34d26.js",
     "static/css/2.bb17d45b.chunk.css",
-    "static/js/2.59f525e3.chunk.js",
-    "static/css/main.c2887088.chunk.css",
-    "static/js/main.76bded59.chunk.js"
+    "static/js/2.92b9063a.chunk.js",
+    "static/css/main.31d0df80.chunk.css",
+    "static/js/main.3b9db5bc.chunk.js"
   ]
 }

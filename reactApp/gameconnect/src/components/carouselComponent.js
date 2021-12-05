@@ -16,7 +16,8 @@ const JBTCarousel = (props) => {
           alt="First slide"
         />
         <Carousel.Caption>
-          <span style={{fontSize: "4vw"}}><strong>{props.informationPanel[0].title}</strong></span><span> &copy;</span>
+          <span style={{fontSize: "4vw"}}><strong>{props.informationPanel[0].title}</strong></span>
+          <span style={{fontSize: "1.5vw"}}> &copy;</span>
           <h2 style={{fontSize: "3vw"}}>{props.informationPanel[0].subtitle}</h2>
           <p style={{fontSize: "1.7vw"}}>{props.informationPanel[0].description}</p>
         </Carousel.Caption>

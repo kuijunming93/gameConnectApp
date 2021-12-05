@@ -54,8 +54,11 @@
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-@media (min-width: 440px) and (max-width: 767px){
-  .JBTCarousel{
-      font-size: 1vw;
-  }
+.bodyGameIcon{
+  transition: transform .5s,
+  filter 0.3s ease-in-out;  transform-origin: center center;
+}
+
+.bodyGameIcon:hover,.bodyGameIcon:active{
+  filter: brightness(125%);  transform: scale(1.005);
 }

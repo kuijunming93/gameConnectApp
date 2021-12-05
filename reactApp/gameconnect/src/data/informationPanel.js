@@ -6,7 +6,7 @@ export const INFORMATIONPANEL = [
         imageURL: "https://i.ibb.co/PMTJqsB/earth-Wallpaper2.jpg"
     },
     {
-        title: "GAME CONNECT",
+        title: "GAMECONNECT",
         subtitle: "Explore the Universe Today",
         description: "Fun with friends!",
         imageURL: "https://i.ibb.co/KKSRz5p/earth-Wallpaper.jpg"

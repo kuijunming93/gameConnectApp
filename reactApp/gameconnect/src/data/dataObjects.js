@@ -5,7 +5,8 @@ export const DATAOBJECTS = [
         image:'https://i.ibb.co/syFbrGq/World-Chubs-Window.jpg',
         genreIndex: 0,
         genreName: "Local Multiplayer",
-        compatibility: "Recommended - PC, Tablet\nNot Recommended - Mobile",
+        compatibility: "Recommended - PC, Tablet",
+        noncompatible: "Not Recommended - Mobile",
         descriptions: "Supports local multiplayer via controller and keyboard controls",
         pathURL: "https://kuijunming93.github.io/unityGameDesign/Builds/WorldChubs/index.html"
     },
@@ -15,7 +16,8 @@ export const DATAOBJECTS = [
         image:'https://i.ibb.co/FwHwsVx/Sky-Exterminator-Window.jpg',
         genreIndex: 1,
         genreName: "Arcade",
-        compatibility: "Recommended - PC, Tablet\nNot Recommended - Mobile",
+        compatibility: "Recommended - PC, Tablet",
+        noncompatible: "Not Recommended - Mobile",
         descriptions: "Best played in Tablet devices",
         pathURL: "https://kuijunming93.github.io/unityGameDesign/Builds/SkyExterminator/index.html"
     },
@@ -25,7 +27,8 @@ export const DATAOBJECTS = [
         image:'https://i.ibb.co/0tcQ8kG/Galaxy-Defender2.jpg',
         genreIndex: 0,
         genreName: "Local Multiplayer",
-        compatibility: "Recommended - PC, Tablet\nNot Recommended - Mobile",
+        compatibility: "Recommended - PC, Tablet",
+        noncompatible: "Not Recommended - Mobile",
         descriptions: "Best played with friends in controller/gamepad controls",
         pathURL: "https://kuijunming93.github.io/unityGameDesign/Builds/GalaxyDefender2.0/index.html"
     },
@@ -36,6 +39,7 @@ export const DATAOBJECTS = [
         genreIndex: 2,
         genreName: "Adventure",
         compatibility: "Recommended - PC, Tablet, Mobile",
+        noncompatible: "Not Recommended - None",
         descriptions: "Supports single-player via keyboard or touch controls",
         pathURL: "https://kuijunming93.github.io/unityGameDesign/Builds/GrandEscape/index.html"
     },
@@ -45,7 +49,8 @@ export const DATAOBJECTS = [
         image:'https://i.ibb.co/X5VQyyf/Galaxy-Defender-Window.jpg',
         genreIndex: 1,
         genreName: "Arcade",
-        compatibility: "Recommended - PC\nNot Supported - Tablet, Mobile",
+        compatibility: "Recommended - PC",
+        noncompatible: "Not Supported - Tablet, Mobile",
         descriptions: "Supports single player - keyboard/controller controls only",
         pathURL: "https://kuijunming93.github.io/unityGameDesign/Builds/GalaxyDefender/index.html"
     }

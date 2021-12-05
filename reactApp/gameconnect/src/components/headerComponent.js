@@ -32,7 +32,7 @@ class Header extends Component {
             return(
                 <div key={renderObject.id}>
                     <a href={renderObject.pathURL}>
-                        <img width="100%" src={imagePath} alt="Game Screenshot"/>
+                        <img className="bodyGameIcon" width="100%" src={imagePath} alt="Game Screenshot"/>
                     </a>
                     <div className="mt-3"><h5>{renderObject.name}</h5></div>
                     <div><small>{renderObject.genreName}</small></div>

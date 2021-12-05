@@ -51,6 +51,7 @@ class Body extends Component{
                     </CardText>
                     </CardBody>
                     <CardImg
+                    className="bodyGameIcon"
                     alt="Game Screenshot"
                     bottom
                     src= {imagePath}
@@ -60,10 +61,11 @@ class Body extends Component{
                     <Collapse isOpen={this.checkState(renderObject.id)}>
                     <Card body>
                         <CardTitle tag="h6">Compatibility</CardTitle>
-                        <CardSubtitle>
+                        <CardSubtitle style={{fontSize:"90%"}}>
                             {renderObject.compatibility}
+                            <div>{renderObject.noncompatible}</div>
                         </CardSubtitle>
-                        <CardText className="text-muted">
+                        <CardText className="text-muted" style={{fontSize:"80%"}}>
                             {renderObject.descriptions}</CardText>
                         <Button color="primary" href = {renderObject.pathURL}
                         >Play</Button>

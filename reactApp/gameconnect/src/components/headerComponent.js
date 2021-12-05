@@ -58,7 +58,7 @@ class Header extends Component {
                     fixed="top"
                 >
                     <NavbarBrand href="/">
-                    <i class="fa fa-gamepad" aria-hidden="true"></i> GameConnect
+                    <i className="fa fa-gamepad" aria-hidden="true"></i> GameConnect
                     </NavbarBrand>
                     <NavbarToggler onClick={this.toggleNav} />
                     <Collapse isOpen={this.state.isNavOpen} navbar>
@@ -70,14 +70,14 @@ class Header extends Component {
                             <Button 
                             color="primary"
                             onClick={this.toggleOffCanvas}>
-                                <i class="fa fa-user-circle" aria-hidden="true"></i> Play Now
+                                <i className="fa fa-user-circle" aria-hidden="true"></i> Play Now
                             </Button>
                         </NavItem>
                     </Nav>
                     <NavbarText>
                         <a href="https://kuijunming93.github.io/myWebpage/site2/"
                         style={{textDecoration: "none", color: "lightblue"}}>
-                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> GoTo GrandFlix</a>
+                            <i className="fa fa-arrow-circle-o-right" aria-hidden="true"></i> GoTo GrandFlix</a>
                     </NavbarText>
                     </Collapse>
                 </Navbar>
@@ -87,7 +87,7 @@ class Header extends Component {
                     toggle={this.toggleOffCanvas}
                     autoFocus={true}>
                     <OffcanvasHeader toggle={this.toggleOffCanvas}>
-                    <i class="fa fa-gamepad" aria-hidden="true"></i> Game List
+                    <i className="fa fa-gamepad" aria-hidden="true"></i> Game List
                     </OffcanvasHeader>
                     <OffcanvasBody>
                         <div className="container">

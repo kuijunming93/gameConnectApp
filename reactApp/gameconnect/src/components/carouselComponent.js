@@ -11,8 +11,6 @@ const JBTCarousel = (props) => {
     pause={false}>
       <Carousel.Item interval={8000}>
         <img
-          width="100%"
-          height="100%"
           className="d-block w-100"
           src={props.informationPanel[0].imageURL}
           alt="First slide"
@@ -25,8 +23,6 @@ const JBTCarousel = (props) => {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          width="100%"
-          height="100%"
           className="d-block w-100"
           src={props.informationPanel[1].imageURL}
           alt="Second slide"

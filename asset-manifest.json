@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/gameConnectApp/static/css/main.31d0df80.chunk.css",
-    "main.js": "/gameConnectApp/static/js/main.f574d225.chunk.js",
-    "main.js.map": "/gameConnectApp/static/js/main.f574d225.chunk.js.map",
+    "main.js": "/gameConnectApp/static/js/main.bd28b561.chunk.js",
+    "main.js.map": "/gameConnectApp/static/js/main.bd28b561.chunk.js.map",
     "runtime-main.js": "/gameConnectApp/static/js/runtime-main.cec34d26.js",
     "runtime-main.js.map": "/gameConnectApp/static/js/runtime-main.cec34d26.js.map",
     "static/css/2.bb17d45b.chunk.css": "/gameConnectApp/static/css/2.bb17d45b.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.bb17d45b.chunk.css",
     "static/js/2.71040a37.chunk.js",
     "static/css/main.31d0df80.chunk.css",
-    "static/js/main.f574d225.chunk.js"
+    "static/js/main.bd28b561.chunk.js"
   ]
 }

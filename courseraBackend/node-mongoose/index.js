@@ -9,27 +9,50 @@ connect.then((db) => {
 
     console.log('Connected correctly to server');
 
-    var newDish = Dishes({
-        name: 'Uthappizza',
-        description: 'test'
+    // creating directly on the mongoose schema using mongoose command
+    Dishes.create({
+        name: 'Uthapizza',
+        description: 'Test'
+    })
+    .then((dish) => {
+        console.log(dish);
+        
+        return Dishes.find({}).exec();
+    })
+    .then((dishes) => {
+        console.log(dishes);
+
+        return Dishes.remove({});
+    })
+    .then(() => {
+        return mongoose.connection.close();
+    })
+    .catch((err) => {
+        console.log(err);
     });
 
-    newDish.save()
-        .then((dish) => {
-            console.log(dish);
+    // creating a var and saving it under mongoose schema
+    // var newDish = Dishes({
+    //     name: 'Uthappizza',
+    //     description: 'test'
+    // });
 
-            return Dishes.find({});
-        })
-        .then((dishes) => {
-            console.log(dishes);
+    // newDish.save()
+    //     .then((dish) => {
+    //         console.log(dish);
 
-            return Dishes.remove({});
-        })
-        .then(() => {
-            return mongoose.connection.close();
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+    //         return Dishes.find({});
+    //     })
+    //     .then((dishes) => {
+    //         console.log(dishes);
+
+    //         return Dishes.remove({});
+    //     })
+    //     .then(() => {
+    //         return mongoose.connection.close();
+    //     })
+    //     .catch((err) => {
+    //         console.log(err);
+    //     });
 
 });

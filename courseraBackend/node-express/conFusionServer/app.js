@@ -11,6 +11,8 @@ var usersRouter = require('./routes/users');
 var dishRouter = require('./routes/dishRouter');
 var promoRouter = require('./routes/promoRouter');
 var leaderRouter = require('./routes/leaderRouter');
+var passport = require('passport');
+var authenticate = require('./authenticate');
 
 var app = express();
 
@@ -23,35 +25,32 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use(session({
-  name: 'session-id',
-  secret: '12345-67890-09876-54321',
-  saveUninitialized: false,
-  resave: false,
-  store: new FileStore()
-})); 
+app.use(passport.initialize());
+app.use(passport.session());
 
-//middleware for validation/authenication
+// app.use(session({
+//   name: 'session-id',
+//   secret: '12345-67890-09876-54321',
+//   saveUninitialized: false,
+//   resave: false,
+//   store: new FileStore()
+// })); //no longer relevant as it will be handled by passport module
+
+//middleware to access to user creation services for validation/authenication
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+//middleware for validation/authenication before proceeding to core services
 function auth (req, res, next) {
-    console.log(req.session);
+  console.log(req.user);
 
-  if(!req.session.user) {
-      var err = new Error('You are not authenticated!');
-      err.status = 403;
-      return next(err);
+  if (!req.user) {
+    var err = new Error('You are not authenticated!');
+    err.status = 403;
+    next(err);
   }
   else {
-    if (req.session.user === 'authenticated') {
-      next();
-    }
-    else {
-      var err = new Error('You are not authenticated!');
-      err.status = 403;
-      return next(err);
-    }
+        next();
   }
 }
 

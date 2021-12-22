@@ -13,6 +13,7 @@ var promoRouter = require('./routes/promoRouter');
 var leaderRouter = require('./routes/leaderRouter');
 var passport = require('passport');
 var authenticate = require('./authenticate');
+var config = require('./config');
 
 var app = express();
 
@@ -39,6 +40,11 @@ app.use(passport.session());
 //middleware to access to user creation services for validation/authenication
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+//route to access services here
+app.use('/users', usersRouter);
+app.use('/dishes', dishRouter);
+app.use('/promotions', promoRouter);
+app.use('/leaders', leaderRouter);
 
 //middleware for validation/authenication before proceeding to core services
 function auth (req, res, next) {
@@ -58,12 +64,7 @@ app.use(auth);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-//route to access services here
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/dishes', dishRouter);
-app.use('/promotions', promoRouter);
-app.use('/leaders', leaderRouter);
+
 
 const mongoose = require('mongoose');
 
@@ -71,7 +72,8 @@ const Dishes = require('./models/dishes');
 const Leaders = require('./models/leaders');
 const Promotions = require('./models/promotions');
 
-const url = 'mongodb://localhost:27017/conFusion';
+//start connection to db
+const url = config.mongoUrl;
 const connect = mongoose.connect(url);
 
 connect.then((db) => {
